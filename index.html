@@ -5,7 +5,33 @@
 </head>
 <body>
     <h1>Python Billing Calculator</h1>
-    <p>This is my Python Billing Calculator project.</p>
-    <p>It calculates the final bill after applying a discount.</p>
+    <p>Calculate your final bill after applying a discount.</p>
+
+    <label>Bill Amount:</label>
+    <input type="number" id="bill" placeholder="Enter bill amount">
+
+    <br><br>
+
+    <label>Discount (%):</label>
+    <input type="number" id="discount" placeholder="Enter discount">
+
+    <br><br>
+
+    <button onclick="calculateBill()">Calculate</button>
+
+    <h2 id="result"></h2>
+
+    <script>
+        function calculateBill() {
+            let bill = Number(document.getElementById("bill").value);
+            let discount = Number(document.getElementById("discount").value);
+
+            let discountAmount = bill * discount / 100;
+            let finalBill = bill - discountAmount;
+
+            document.getElementById("result").innerText =
+                "Final Bill: " + finalBill;
+        }
+    </script>
 </body>
 </html>
